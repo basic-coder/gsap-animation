@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+        <h2>Scroll to start Story </h2>
+    </section>
+    <div class="box">
+        <h2 class="text1">A rich man's son was graduating college.</h2>
+        <h2 class="text2">For months, the son was asking his father for a new car, knowing that his father had more than enough money.</h2>
+        <h2 class="text3">When graduation day came, the young man's father called him into the study. The father handed him a wrapped gift and congratulated him about his graduation and his achievement.</h2>
+        <img src="https://cdn.pixabay.com/photo/2018/06/18/01/11/son-3481736_1280.png" class="image">
+    </div>
+    <div class="box2">
+        <h2 class="text4">Looking disappointed, the son opened the gift to find a lovely, leather bound journal, with the young man's name embossed on the cover. He angrily raised his voice, threw down the journal and stormed out.</h2>
+        <h2 class="text5">The young man had not seen his father since graduation day. He became successful and was wealthy like his father, with a beautiful home and family. He came to realize his father was aging and it may be time to put the past behind them.</h2>
+        <h2 class="text6">Just then, he received a message that his father had passed, and he had to return home to take care of the estate.</h2>
+        <img src="https://cdn.pixabay.com/photo/2014/04/03/11/54/headstone-312540_1280.png" class="image1">
+    </div>
+    <div class="box3">
+        <h2 class="text7">As the mourning son regretfully returned home, he began searching through his father's important papers and saw that still new journal, just as he had left it.</h2>
+        <h2 class="text8">He opened it, and as he flipped through the pages a car key dropped from the back of the journal.</h2>
+        <h2 class="text9">A dealer tag was attached to the key that read "Paid in full. Wherever this car takes you, write about it to remember it forever. Love, Dad"</h2>
+        <img src=" https://cdn.pixabay.com/photo/2013/07/13/10/12/sketchbook-156775_1280.png" class="image2">
+        <img src=" https://cdn.pixabay.com/photo/2013/07/13/01/23/car-key-155643_1280.png" class="image3">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>	
+
+<script>
+    gsap.timeline({
+        scrollTrigger:{
+            trigger: ".box",
+            start: "center center",
+            end: "bottom top",
+            scrub: true,
+            pin:true
+        }
+    })
+    .from(".text1", {x : innerWidth * 1})
+    .from(".text2", {x : innerWidth * -1})
+    .from(".text3", {x : innerWidth * 1})
+    .from(".image", {
+        y : innerWidth * 1,
+        rotate: 360
+    })
+
+    gsap.timeline({
+        scrollTrigger:{
+            trigger: ".box2",
+            start: "center center",
+            end: "bottom top",
+            scrub: true,
+            pin: true
+        }
+    })
+
+    .from(".box2", {opacity : 0})    
+    .from(".text4", {y : innerHeight * 1})
+    .from(".text5", {y : innerHeight * -1})
+    .from(".text6", {y : innerHeight * 1})
+    .from(".image1", {
+        y : innerWidth * 1,
+        rotate: 360
+    })
+
+    gsap.timeline({
+        scrollTrigger:{
+            trigger: ".box3",
+            start: "center center",
+            end: "bottom top",
+            scrub: true,
+            pin: true
+        }
+    })
+
+    .from(".box3", {opacity : 0})    
+    .from(".text7", {x : innerWidth * 1})
+    .from(".text8", {x : innerWidth * 1})
+    .from(".text9", {x : innerWidth * 1})
+    .from(".image2", {
+        y : innerWidth * 1,
+        rotate: 360
+    })
+    .from(".image3", {
+        y : innerWidth * 1,
+        rotate: 360
+    })
+
+
+
+</script>
+</body>
+</html>
